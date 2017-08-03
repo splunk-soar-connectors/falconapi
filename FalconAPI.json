@@ -1,11 +1,11 @@
 {
   "appid": "e932a88e-5204-42b8-a9ee-37581c06798c",
   "name": "Falcon Host API",
-  "description": "The Falcon Host API allows you to upload, update, delete, and query indicators of compromise (IOCs). You can also obtain information about indicators that ran in your environment, the devices on which they ran, and details of processes that are running or that previously ran.",
+  "description": "The Falcon Host API allows you to manage indicators of compromise (IOC) and <b>investigate</b> your endpoints for IOCs",
   "publisher": "Phantom",
   "package_name": "phantom_falconapi",
   "type": "endpoint",
-  "license": "Copyright (c) Phantom Cyber Corporation 2016",
+  "license": "Copyright (c) Phantom Cyber Corporation 2014-2017",
   "main_module": "FalconAPI_connector.pyc",
     "app_version": "1.0.20",
     "utctime_updated": "2017-04-29T02:30:53.000000Z",
