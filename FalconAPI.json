@@ -1,7 +1,7 @@
 {
   "appid": "e932a88e-5204-42b8-a9ee-37581c06798c",
   "name": "Falcon Host API",
-  "description": "The Falcon Host API allows you to manage indicators of compromise (IOC) and <b>investigate</b> your endpoints for IOCs",
+  "description": "This app allows you to manage indicators of compromise (IOC) and <b>investigate</b> your endpoints on the Falcon Host API",
   "publisher": "Phantom",
   "package_name": "phantom_falconapi",
   "type": "endpoint",
