@@ -1038,6 +1038,7 @@
     {
         "action": "list endpoints",
         "description": "List all the endpoints/sensors configured on the device",
+        "verbose": "<b>Filtering:</b><br>The Filter parameter allows you to search for specific devices in your environment by platform, host name, IP, or a number of other parameters. The filter must be made in the format FIELD: ’VALUE’.  The value for the field must be a string enclosed by single quotes:<br><code>platform_name:'Windows'</code><br><br>Some numerical fields support filtering with operators. Supported operators include: >, <, =, >=, <=, and != . Using filter operators, it is possible to conduct searches like; show me all devices that have been active in the 7 days before July 31 2016:<br><code>last_seen:>'2016-07-24'</code><br><br>Wildcards are also supported for host name search. For example, you could do a partial search for a device called \"my-host-name\" like so:<br><code>hostname:'my-host-na*'</code><br><br>You can also use multiple filter statements, the filters are applied sequentially, each search is executed and then the subsequent search is done over the filtered results. <br>There are two logical operators, a plus sign (+) is used for AND, and comma separated statements in brackets ([,]) are used for OR.   Using logical operators, it is possible to conduct searches like; show me all devices that have been active in the 7 days before July 31 2016 AND devices where the platform is Windows OR Mac:<br><code>last_seen:>'2016-07-24'+platform_name:['Windows','Mac']</code>",
         "type": "investigate",
         "identifier": "list_endpoints",
         "read_only": true,
@@ -1057,7 +1058,14 @@
             "required": false,
             "order": 1,
             "default": "100"
-          }
+          },
+          "filter": {
+            "description": "Filter to limit endpoints",
+            "data_type": "string",
+            "primary": false,
+            "required": false,
+            "order": 2
+           }
         },
         "render": {
           "width": 12,
@@ -1212,6 +1220,10 @@
           },
           {
             "data_path": "action_result.parameter.offset",
+            "data_type": "string"
+          },
+          {
+            "data_path": "action_result.parameter.filter",
             "data_type": "string"
           },
           {

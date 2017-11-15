@@ -512,6 +512,10 @@ class FalconHostAPI(BaseConnector):
                 'limit': param.get(FALCONAPI_JSON_LIMIT, 100),
                 'sort': 'hostname.asc'}
 
+        filter_query = param.get('filter')
+        if (filter_query):
+            params['filter'] = filter_query
+
         ret_val, response = self._call_falcon_api(FALCONAPI_LIST_DEVICES_DETAIL_APIPATH, action_result, params=params, fof_ok=True)
 
         if (phantom.is_fail(ret_val)):
