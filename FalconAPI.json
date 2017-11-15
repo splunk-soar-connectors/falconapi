@@ -1223,6 +1223,10 @@
             "data_type": "string"
           },
           {
+            "data_path": "action_result.parameter.filter",
+            "data_type": "string"
+          },
+          {
             "data_path": "summary.total_objects",
             "data_type": "numeric"
           },
