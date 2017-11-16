@@ -7,8 +7,8 @@
   "type": "endpoint",
   "license": "Copyright (c) Phantom Cyber Corporation 2016-2017",
   "main_module": "FalconAPI_connector.pyc",
-    "app_version": "1.0.22",
-    "utctime_updated": "2017-08-29T06:11:30.000000Z",
+  "app_version": "1.0.23",
+  "utctime_updated": "2017-11-16T18:58:39.000000Z",
   "product_vendor": "CrowdStrike",
   "product_name": "Falcon Host API",
   "product_version_regex": ".*",
@@ -49,8 +49,7 @@
       "type": "test",
       "identifier": "test_connectivity",
       "read_only": true,
-      "parameters": {
-      },
+      "parameters": {},
       "output": [],
       "versions": "EQ(*)"
     },
@@ -65,7 +64,12 @@
         "hash": {
           "description": "File hash to search",
           "data_type": "string",
-          "contains": [ "hash", "sha256", "sha1", "md5" ],
+          "contains": [
+            "hash",
+            "sha256",
+            "sha1",
+            "md5"
+          ],
           "primary": true,
           "required": true
         },
@@ -90,7 +94,9 @@
         {
           "data_path": "action_result.data.*.device_id",
           "data_type": "string",
-          "contains": [ "falcon device id" ],
+          "contains": [
+            "falcon device id"
+          ],
           "column_order": 0,
           "column_name": "Falcon Device ID"
         },
@@ -101,7 +107,12 @@
         {
           "data_path": "action_result.parameter.hash",
           "data_type": "string",
-          "contains": [ "hash", "sha256", "sha1", "md5" ]
+          "contains": [
+            "hash",
+            "sha256",
+            "sha1",
+            "md5"
+          ]
         },
         {
           "data_path": "action_result.parameter.count_only",
@@ -124,7 +135,9 @@
         "domain": {
           "description": "Domain to search",
           "data_type": "string",
-          "contains": [ "domain" ],
+          "contains": [
+            "domain"
+          ],
           "primary": true,
           "required": true
         },
@@ -149,7 +162,9 @@
         {
           "data_path": "action_result.data.*.device_id",
           "data_type": "string",
-          "contains": [ "falcon device id" ],
+          "contains": [
+            "falcon device id"
+          ],
           "column_order": 0,
           "column_name": "Falcon Device ID"
         },
@@ -160,7 +175,9 @@
         {
           "data_path": "action_result.parameter.domain",
           "data_type": "string",
-          "contains": [ "domain" ]
+          "contains": [
+            "domain"
+          ]
         },
         {
           "data_path": "action_result.parameter.count_only",
@@ -184,14 +201,22 @@
         "ioc": {
           "description": "File Hash or Domain to use for searching",
           "data_type": "string",
-          "contains": [ "hash", "sha256", "sha1", "md5", "domain" ],
+          "contains": [
+            "hash",
+            "sha256",
+            "sha1",
+            "md5",
+            "domain"
+          ],
           "required": true,
           "primary": true
         },
         "id": {
           "description": "Falcon Device ID to search on",
           "data_type": "string",
-          "contains": [ "falcon device id" ],
+          "contains": [
+            "falcon device id"
+          ],
           "primary": true,
           "required": true
         }
@@ -230,14 +255,22 @@
           "data_type": "string",
           "column_order": 1,
           "column_name": "IOC Queried",
-          "contains": ["hash", "sha256", "sha1", "md5", "domain"]
+          "contains": [
+            "hash",
+            "sha256",
+            "sha1",
+            "md5",
+            "domain"
+          ]
         },
         {
           "data_path": "action_result.parameter.id",
           "data_type": "string",
           "column_order": 0,
           "column_name": "Falcon Device ID",
-          "contains": [ "falcon device id" ]
+          "contains": [
+            "falcon device id"
+          ]
         }
       ]
     },
@@ -252,7 +285,9 @@
         "falcon_process_id": {
           "description": "Process ID from previous Falcon IOC search",
           "data_type": "string",
-          "contains": [ "falcon process id" ],
+          "contains": [
+            "falcon process id"
+          ],
           "primary": true,
           "required": true
         }
@@ -284,7 +319,9 @@
           "data_type": "string",
           "column_order": 3,
           "column_name": "File Name",
-          "contains": [ "file name" ]
+          "contains": [
+            "file name"
+          ]
         },
         {
           "data_path": "action_result.data.*.start_timestamp",
@@ -319,24 +356,32 @@
           "data_type": "string",
           "column_order": 0,
           "column_name": "Falcon Process ID",
-          "contains": ["falcon process id"]
+          "contains": [
+            "falcon process id"
+          ]
         },
         {
           "data_path": "action_result.data.*.process_id",
           "data_type": "string",
-          "contains": ["pid"]
+          "contains": [
+            "pid"
+          ]
         },
         {
           "data_path": "action_result.data.*.process_id_local",
           "data_type": "string",
-          "contains": ["pid"]
+          "contains": [
+            "pid"
+          ]
         },
         {
           "data_path": "action_result.data.*.device_id",
           "data_type": "string",
           "column_order": 6,
           "column_name": "Falcon Device ID",
-          "contains": ["falcon device id"]
+          "contains": [
+            "falcon device id"
+          ]
         }
       ]
     },
@@ -351,7 +396,9 @@
         "id": {
           "description": "Device ID from previous Falcon IOC search",
           "data_type": "string",
-          "contains": [ "falcon device id" ],
+          "contains": [
+            "falcon device id"
+          ],
           "primary": true,
           "required": true
         }
@@ -363,160 +410,168 @@
         "height": 5
       },
       "output": [
-          {
-            "data_path": "action_result.data.*.cid",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.status",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.hostname",
-            "data_type": "string",
-            "contains": [ "host name" ],
-            "column_name": "Hostname",
-            "column_order": 1
-          },
-          {
-            "data_path": "action_result.data.*.device_id",
-            "data_type": "string",
-            "contains": ["falcon device id"],
-            "column_name": "Falcon Device ID",
-            "column_order": 0
-          },
-          {
-            "data_path": "action_result.data.*.last_seen",
-            "data_type": "string",
-            "column_name": "Last Seen",
-            "column_order": 2
-          },
-          {
-            "data_path": "action_result.data.*.os_version",
-            "data_type": "string",
-            "column_name": "OS Version",
-            "column_order": 3
-          },
-          {
-            "data_path": "action_result.data.*.external_ip",
-            "data_type": "string",
-            "contains": ["ip"]
-          },
-          {
-            "data_path": "action_result.data.*.platform_id",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.bios_version",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.agent_version",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.major_version",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.minor_version",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.platform_name",
-            "data_type": "string",
-            "column_name": "Platform",
-            "column_order": 4
-          },
-          {
-            "data_path": "action_result.data.*.config_id_base",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.config_id_build",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.agent_load_flags",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.agent_local_time",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.bios_manufacturer",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.config_id_platform",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.modified_timestamp",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.system_manufacturer",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.system_product_name",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.ou",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.site_name",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.product_type",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.machine_domain",
-            "data_type": "string",
-            "contains": [
-              "domain"
-            ]
-          },
-          {
-            "data_path": "action_result.data.*.product_type_desc",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.release_group",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.status",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.message",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.summary.device_count",
-            "data_type": "numeric"
-          },
-          {
-            "data_path": "action_result.parameter.id",
-            "data_type": "string",
-            "contains": ["falcon device id"]
-          },
-          {
-            "data_path": "summary.total_objects",
-            "data_type": "numeric"
-          },
-          {
-            "data_path": "summary.total_objects_successful",
-            "data_type": "numeric"
-          }
-        ]
+        {
+          "data_path": "action_result.data.*.cid",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.status",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.hostname",
+          "data_type": "string",
+          "contains": [
+            "host name"
+          ],
+          "column_name": "Hostname",
+          "column_order": 1
+        },
+        {
+          "data_path": "action_result.data.*.device_id",
+          "data_type": "string",
+          "contains": [
+            "falcon device id"
+          ],
+          "column_name": "Falcon Device ID",
+          "column_order": 0
+        },
+        {
+          "data_path": "action_result.data.*.last_seen",
+          "data_type": "string",
+          "column_name": "Last Seen",
+          "column_order": 2
+        },
+        {
+          "data_path": "action_result.data.*.os_version",
+          "data_type": "string",
+          "column_name": "OS Version",
+          "column_order": 3
+        },
+        {
+          "data_path": "action_result.data.*.external_ip",
+          "data_type": "string",
+          "contains": [
+            "ip"
+          ]
+        },
+        {
+          "data_path": "action_result.data.*.platform_id",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.bios_version",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.agent_version",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.major_version",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.minor_version",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.platform_name",
+          "data_type": "string",
+          "column_name": "Platform",
+          "column_order": 4
+        },
+        {
+          "data_path": "action_result.data.*.config_id_base",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.config_id_build",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.agent_load_flags",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.agent_local_time",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.bios_manufacturer",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.config_id_platform",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.modified_timestamp",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.system_manufacturer",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.system_product_name",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.ou",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.site_name",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.product_type",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.machine_domain",
+          "data_type": "string",
+          "contains": [
+            "domain"
+          ]
+        },
+        {
+          "data_path": "action_result.data.*.product_type_desc",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.release_group",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.status",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.message",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.summary.device_count",
+          "data_type": "numeric"
+        },
+        {
+          "data_path": "action_result.parameter.id",
+          "data_type": "string",
+          "contains": [
+            "falcon device id"
+          ]
+        },
+        {
+          "data_path": "summary.total_objects",
+          "data_type": "numeric"
+        },
+        {
+          "data_path": "summary.total_objects_successful",
+          "data_type": "numeric"
+        }
+      ]
     },
     {
       "action": "create alert",
@@ -530,7 +585,14 @@
         "ioc": {
           "description": "Input domain, ip or hash ioc",
           "data_type": "string",
-          "contains": [ "hash", "sha256", "sha1", "md5", "domain", "ip" ],
+          "contains": [
+            "hash",
+            "sha256",
+            "sha1",
+            "md5",
+            "domain",
+            "ip"
+          ],
           "primary": true,
           "required": true,
           "order": 0
@@ -539,13 +601,18 @@
           "description": "Enforcement Policy (in case of detection)",
           "data_type": "string",
           "required": true,
-          "value_list": [ "detect", "none" ],
+          "value_list": [
+            "detect",
+            "none"
+          ],
           "order": 1
         },
         "share_level": {
           "description": "Indicator share level",
           "data_type": "string",
-          "value_list": [ "red" ],
+          "value_list": [
+            "red"
+          ],
           "order": 2
         },
         "expiration": {
@@ -589,7 +656,14 @@
         {
           "data_path": "action_result.parameter.ioc",
           "data_type": "string",
-          "contains": ["hash", "sha256", "sha1", "md5", "domain", "ip"]
+          "contains": [
+            "hash",
+            "sha256",
+            "sha1",
+            "md5",
+            "domain",
+            "ip"
+          ]
         },
         {
           "data_path": "action_result.parameter.policy",
@@ -632,7 +706,13 @@
         "ioc": {
           "description": "Hash, ip or domain IOC to get details of",
           "data_type": "string",
-          "contains": [ "ip", "sha1", "md5", "sha256", "domain" ],
+          "contains": [
+            "ip",
+            "sha1",
+            "md5",
+            "sha256",
+            "domain"
+          ],
           "primary": true,
           "required": true
         }
@@ -643,7 +723,6 @@
         "view": "falconapi_view.get_alert_view"
       },
       "output": [
-
         {
           "data_path": "action_result.data.*.type",
           "data_type": "string"
@@ -703,7 +782,13 @@
         {
           "data_path": "action_result.parameter.ioc",
           "data_type": "string",
-          "contains": ["ip", "sha1", "md5", "sha256", "domain"]
+          "contains": [
+            "ip",
+            "sha1",
+            "md5",
+            "sha256",
+            "domain"
+          ]
         },
         {
           "data_path": "summary.total_objects",
@@ -726,7 +811,13 @@
         "ioc": {
           "description": "Hash, ip or domain IOC to update",
           "data_type": "string",
-          "contains": [ "ip", "sha1", "md5", "sha256", "domain" ],
+          "contains": [
+            "ip",
+            "sha1",
+            "md5",
+            "sha256",
+            "domain"
+          ],
           "primary": true,
           "required": true,
           "order": 0
@@ -734,7 +825,10 @@
         "policy": {
           "description": "Enforcement policy (in case of detection)",
           "data_type": "string",
-          "value_list": [ "detect", "none" ],
+          "value_list": [
+            "detect",
+            "none"
+          ],
           "order": 1
         },
         "share_level": {
@@ -786,7 +880,13 @@
         {
           "data_path": "action_result.parameter.ioc",
           "data_type": "string",
-          "contains": ["ip", "sha1", "md5", "sha256", "domain"]
+          "contains": [
+            "ip",
+            "sha1",
+            "md5",
+            "sha256",
+            "domain"
+          ]
         },
         {
           "data_path": "action_result.parameter.policy",
@@ -829,7 +929,13 @@
         "ioc": {
           "description": "Hash, ip or domain IOC from previous upload",
           "data_type": "string",
-          "contains": [ "ip", "sha1", "md5", "sha256", "domain" ],
+          "contains": [
+            "ip",
+            "sha1",
+            "md5",
+            "sha256",
+            "domain"
+          ],
           "primary": true,
           "required": true
         }
@@ -859,7 +965,13 @@
         {
           "data_path": "action_result.parameter.ioc",
           "data_type": "string",
-          "contains": ["ip", "sha1", "md5", "sha256", "domain"]
+          "contains": [
+            "ip",
+            "sha1",
+            "md5",
+            "sha256",
+            "domain"
+          ]
         },
         {
           "data_path": "summary.total_objects",
@@ -883,26 +995,48 @@
         "ioc": {
           "description": "Hash, ip or domain IOC to match",
           "data_type": "string",
-          "contains": [ "hash", "ip", "sha1", "md5", "sha256", "domain" ],
+          "contains": [
+            "hash",
+            "ip",
+            "sha1",
+            "md5",
+            "sha256",
+            "domain"
+          ],
           "order": 0,
           "primary": true
         },
         "type": {
           "description": "Indicator type",
           "data_type": "string",
-          "value_list": [ "all", "hash", "ipv4", "sha1", "md5", "sha256", "domain" ],
+          "value_list": [
+            "all",
+            "hash",
+            "ipv4",
+            "sha1",
+            "md5",
+            "sha256",
+            "domain"
+          ],
           "order": 1
         },
         "policy": {
           "description": "Enforcement policy",
           "data_type": "string",
-          "value_list": [ "all", "detect", "none" ],
+          "value_list": [
+            "all",
+            "detect",
+            "none"
+          ],
           "order": 2
         },
         "share_level": {
           "description": "Indicator share level",
           "data_type": "string",
-          "value_list": [ "all", "red" ],
+          "value_list": [
+            "all",
+            "red"
+          ],
           "order": 3
         },
         "source": {
@@ -938,27 +1072,40 @@
         {
           "data_path": "action_result.data.*.md5",
           "data_type": "string",
-          "contains": ["hash", "md5"]
+          "contains": [
+            "hash",
+            "md5"
+          ]
         },
         {
           "data_path": "action_result.data.*.ip",
           "data_type": "string",
-          "contains": ["ip"]
+          "contains": [
+            "ip"
+          ]
         },
         {
           "data_path": "action_result.data.*.sha1",
           "data_type": "string",
-          "contains": ["hash", "sha1"]
+          "contains": [
+            "hash",
+            "sha1"
+          ]
         },
         {
           "data_path": "action_result.data.*.domain",
           "data_type": "string",
-          "contains": ["domain"]
+          "contains": [
+            "domain"
+          ]
         },
         {
           "data_path": "action_result.data.*.sha256",
           "data_type": "string",
-          "contains": ["hash", "sha256"]
+          "contains": [
+            "hash",
+            "sha256"
+          ]
         },
         {
           "data_path": "action_result.status",
@@ -975,7 +1122,14 @@
         {
           "data_path": "action_result.parameter.ioc",
           "data_type": "string",
-          "contains": ["hash", "ip", "sha1", "md5", "sha256", "domain"]
+          "contains": [
+            "hash",
+            "ip",
+            "sha1",
+            "md5",
+            "sha256",
+            "domain"
+          ]
         },
         {
           "data_path": "action_result.parameter.ph",
@@ -1036,206 +1190,212 @@
       ]
     },
     {
-        "action": "list endpoints",
-        "description": "List all the endpoints/sensors configured on the device",
-        "verbose": "<b>Filtering:</b><br>The Filter parameter allows you to search for specific devices in your environment by platform, host name, IP, or a number of other parameters. The filter must be made in the format FIELD: ’VALUE’.  The value for the field must be a string enclosed by single quotes:<br><code>platform_name:'Windows'</code><br><br>Some numerical fields support filtering with operators. Supported operators include: >, <, =, >=, <=, and != . Using filter operators, it is possible to conduct searches like; show me all devices that have been active in the 7 days before July 31 2016:<br><code>last_seen:>'2016-07-24'</code><br><br>Wildcards are also supported for host name search. For example, you could do a partial search for a device called \"my-host-name\" like so:<br><code>hostname:'my-host-na*'</code><br><br>You can also use multiple filter statements, the filters are applied sequentially, each search is executed and then the subsequent search is done over the filtered results. <br>There are two logical operators, a plus sign (+) is used for AND, and comma separated statements in brackets ([,]) are used for OR.   Using logical operators, it is possible to conduct searches like; show me all devices that have been active in the 7 days before July 31 2016 AND devices where the platform is Windows OR Mac:<br><code>last_seen:>'2016-07-24'+platform_name:['Windows','Mac']</code>",
-        "type": "investigate",
-        "identifier": "list_endpoints",
-        "read_only": true,
-        "parameters": {
-          "offset": {
-            "description": "Offset in list of endpoints",
-            "data_type": "numeric",
-            "primary": false,
-            "required": false,
-            "order": 0,
-            "default": "0"
-          },
-          "limit": {
-            "description": "Max endpoints",
-            "data_type": "numeric",
-            "primary": false,
-            "required": false,
-            "order": 1,
-            "default": "100"
-          },
-          "filter": {
-            "description": "Filter to limit endpoints",
-            "data_type": "string",
-            "primary": false,
-            "required": false,
-            "order": 2
-           }
+      "action": "list endpoints",
+      "description": "List all the endpoints/sensors configured on the device",
+      "verbose": "<b>Filtering:</b><br>The Filter parameter allows you to search for specific devices in your environment by platform, host name, IP, or a number of other parameters. The filter must be made in the format FIELD: \u2019VALUE\u2019.  The value for the field must be a string enclosed by single quotes:<br><code>platform_name:'Windows'</code><br><br>Some numerical fields support filtering with operators. Supported operators include: >, <, =, >=, <=, and != . Using filter operators, it is possible to conduct searches like; show me all devices that have been active in the 7 days before July 31 2016:<br><code>last_seen:>'2016-07-24'</code><br><br>Wildcards are also supported for host name search. For example, you could do a partial search for a device called \"my-host-name\" like so:<br><code>hostname:'my-host-na*'</code><br><br>You can also use multiple filter statements, the filters are applied sequentially, each search is executed and then the subsequent search is done over the filtered results. <br>There are two logical operators, a plus sign (+) is used for AND, and comma separated statements in brackets ([,]) are used for OR.   Using logical operators, it is possible to conduct searches like; show me all devices that have been active in the 7 days before July 31 2016 AND devices where the platform is Windows OR Mac:<br><code>last_seen:>'2016-07-24'+platform_name:['Windows','Mac']</code>",
+      "type": "investigate",
+      "identifier": "list_endpoints",
+      "read_only": true,
+      "parameters": {
+        "offset": {
+          "description": "Offset in list of endpoints",
+          "data_type": "numeric",
+          "primary": false,
+          "required": false,
+          "order": 0,
+          "default": "0"
         },
-        "render": {
-          "width": 12,
-          "title": "List Endpoints",
-          "type": "table",
-          "height": 5
+        "limit": {
+          "description": "Max endpoints",
+          "data_type": "numeric",
+          "primary": false,
+          "required": false,
+          "order": 1,
+          "default": "100"
         },
-        "output": [
-          {
-            "data_path": "action_result.data.*.cid",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.status",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.hostname",
-            "data_type": "string",
-            "contains": [ "host name" ],
-            "column_name": "Hostname",
-            "column_order": 1
-          },
-          {
-            "data_path": "action_result.data.*.device_id",
-            "data_type": "string",
-            "contains": ["falcon device id"],
-            "column_name": "Falcon Device ID",
-            "column_order": 0
-          },
-          {
-            "data_path": "action_result.data.*.last_seen",
-            "data_type": "string",
-            "column_name": "Last Seen",
-            "column_order": 2
-          },
-          {
-            "data_path": "action_result.data.*.os_version",
-            "data_type": "string",
-            "column_name": "OS Version",
-            "column_order": 3
-          },
-          {
-            "data_path": "action_result.data.*.external_ip",
-            "data_type": "string",
-            "contains": ["ip"]
-          },
-          {
-            "data_path": "action_result.data.*.platform_id",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.bios_version",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.agent_version",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.major_version",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.minor_version",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.platform_name",
-            "data_type": "string",
-            "column_name": "Platform",
-            "column_order": 4
-          },
-          {
-            "data_path": "action_result.data.*.config_id_base",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.config_id_build",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.agent_load_flags",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.agent_local_time",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.bios_manufacturer",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.config_id_platform",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.modified_timestamp",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.system_manufacturer",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.system_product_name",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.ou",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.site_name",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.product_type",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.machine_domain",
-            "data_type": "string",
-            "contains": [
-              "domain"
-            ]
-          },
-          {
-            "data_path": "action_result.data.*.product_type_desc",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.data.*.release_group",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.status",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.message",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.summary.device_count",
-            "data_type": "numeric"
-          },
-          {
-            "data_path": "action_result.parameter.limit",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.parameter.offset",
-            "data_type": "string"
-          },
-          {
-            "data_path": "action_result.parameter.filter",
-            "data_type": "string"
-          },
-          {
-            "data_path": "summary.total_objects",
-            "data_type": "numeric"
-          },
-          {
-            "data_path": "summary.total_objects_successful",
-            "data_type": "numeric"
-          }
-        ],
-        "versions": "EQ(*)"
+        "filter": {
+          "description": "Filter to limit endpoints",
+          "data_type": "string",
+          "primary": false,
+          "required": false,
+          "order": 2
+        }
+      },
+      "render": {
+        "width": 12,
+        "title": "List Endpoints",
+        "type": "table",
+        "height": 5
+      },
+      "output": [
+        {
+          "data_path": "action_result.data.*.cid",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.status",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.hostname",
+          "data_type": "string",
+          "contains": [
+            "host name"
+          ],
+          "column_name": "Hostname",
+          "column_order": 1
+        },
+        {
+          "data_path": "action_result.data.*.device_id",
+          "data_type": "string",
+          "contains": [
+            "falcon device id"
+          ],
+          "column_name": "Falcon Device ID",
+          "column_order": 0
+        },
+        {
+          "data_path": "action_result.data.*.last_seen",
+          "data_type": "string",
+          "column_name": "Last Seen",
+          "column_order": 2
+        },
+        {
+          "data_path": "action_result.data.*.os_version",
+          "data_type": "string",
+          "column_name": "OS Version",
+          "column_order": 3
+        },
+        {
+          "data_path": "action_result.data.*.external_ip",
+          "data_type": "string",
+          "contains": [
+            "ip"
+          ]
+        },
+        {
+          "data_path": "action_result.data.*.platform_id",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.bios_version",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.agent_version",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.major_version",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.minor_version",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.platform_name",
+          "data_type": "string",
+          "column_name": "Platform",
+          "column_order": 4
+        },
+        {
+          "data_path": "action_result.data.*.config_id_base",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.config_id_build",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.agent_load_flags",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.agent_local_time",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.bios_manufacturer",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.config_id_platform",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.modified_timestamp",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.system_manufacturer",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.system_product_name",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.ou",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.site_name",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.product_type",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.machine_domain",
+          "data_type": "string",
+          "contains": [
+            "domain"
+          ]
+        },
+        {
+          "data_path": "action_result.data.*.product_type_desc",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.data.*.release_group",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.status",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.message",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.summary.device_count",
+          "data_type": "numeric"
+        },
+        {
+          "data_path": "action_result.parameter.limit",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.parameter.offset",
+          "data_type": "string"
+        },
+        {
+          "data_path": "action_result.parameter.filter",
+          "data_type": "string"
+        },
+        {
+          "data_path": "summary.total_objects",
+          "data_type": "numeric"
+        },
+        {
+          "data_path": "summary.total_objects_successful",
+          "data_type": "numeric"
+        }
+      ],
+      "versions": "EQ(*)"
     },
     {
       "action": "set status",
@@ -1249,7 +1409,9 @@
         "id": {
           "description": "Detection ID to set the state of",
           "data_type": "string",
-          "contains": [ "falcon detection id" ],
+          "contains": [
+            "falcon detection id"
+          ],
           "primary": true,
           "required": true,
           "order": 0
@@ -1257,7 +1419,13 @@
         "state": {
           "description": "State to set",
           "data_type": "string",
-          "value_list": [ "new", "in_progress", "true_positive", "false_positive", "ignored" ],
+          "value_list": [
+            "new",
+            "in_progress",
+            "true_positive",
+            "false_positive",
+            "ignored"
+          ],
           "required": true,
           "order": 1
         }
@@ -1283,7 +1451,9 @@
         {
           "data_path": "action_result.parameter.id",
           "data_type": "string",
-          "contains": ["falcon detection id"]
+          "contains": [
+            "falcon detection id"
+          ]
         },
         {
           "data_path": "action_result.parameter.state",
