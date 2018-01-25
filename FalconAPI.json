@@ -5,7 +5,7 @@
     "publisher": "Phantom",
     "package_name": "phantom_falconapi",
     "type": "endpoint",
-    "license": "Copyright (c) Phantom Cyber Corporation 2016-2017",
+    "license": "Copyright (c) Phantom Cyber Corporation, 2016-2018",
     "main_module": "FalconAPI_connector.pyc",
     "app_version": "1.0.26",
     "utctime_updated": "2017-12-21T22:41:40.000000Z",
