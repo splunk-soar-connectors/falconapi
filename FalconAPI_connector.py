@@ -459,11 +459,11 @@ class FalconHostAPI(BaseConnector):
         to_state = param[FALCONAPI_RESOLVE_DETECTION_TO_STATE]
 
         api_data = {
-            "ids": detection_id,
-            "to_state": to_state
+            "ids": [detection_id],
+            "status": to_state
         }
 
-        ret_val, response = self._call_falcon_api(FALCONAPI_RESOLVE_DETECTION_APIPATH, action_result, params=api_data, method="PATCH")
+        ret_val, response = self._call_falcon_api(FALCONAPI_RESOLVE_DETECTION_APIPATH, action_result, data=api_data, method="PATCH")
 
         if (phantom.is_fail(ret_val)):
             return action_result.get_status()

@@ -26,7 +26,7 @@ FALCONAPI_GET_IOCS_APIPATH = "/indicators/entities/iocs/v1"
 FALCONAPI_UPDATE_IOCS_APIPATH = "/indicators/entities/iocs/v1"
 FALCONAPI_DELETE_IOCS_APIPATH = "/indicators/entities/iocs/v1"
 FALCONAPI_SEARCH_IOCS_APIPATH = "/indicators/queries/iocs/v1"
-FALCONAPI_RESOLVE_DETECTION_APIPATH = "/detects/entities/detects/v1"
+FALCONAPI_RESOLVE_DETECTION_APIPATH = "/detects/entities/detects/v2"
 FALCONAPI_TEST_PATH = FALCONAPI_GET_DEVICE_COUNT_APIPATH
 FALCONAPI_LIST_DEVICES_DETAIL_APIPATH = "/devices/queries/devices/v1"
 
