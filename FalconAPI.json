@@ -7,7 +7,7 @@
   "type": "endpoint",
   "license": "Copyright (c) Phantom Cyber Corporation 2016-2017",
   "main_module": "FalconAPI_connector.pyc",
-  "app_version": "1.0.24",
+  "app_version": "1.0.26",
   "utctime_updated": "2017-12-19T23:43:04.000000Z",
   "product_vendor": "CrowdStrike",
   "product_name": "Falcon Host API",
