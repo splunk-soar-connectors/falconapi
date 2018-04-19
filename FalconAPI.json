@@ -1,7 +1,7 @@
 {
     "appid": "e932a88e-5204-42b8-a9ee-37581c06798c",
     "name": "Falcon Host API",
-    "description": "This app allows you to manage indicators of compromise (IOC) and <b>investigate</b> your endpoints on the Falcon Host API",
+    "description": "This app allows you to manage indicators of compromise (IOC) and investigate your endpoints on the Falcon Host API",
     "publisher": "Phantom",
     "package_name": "phantom_falconapi",
     "type": "endpoint",
@@ -12,7 +12,7 @@
     "product_vendor": "CrowdStrike",
     "product_name": "Falcon Host API",
     "product_version_regex": ".*",
-    "min_phantom_version": "1.2.236",
+    "min_phantom_version": "3.0.284",
     "logo": "logo_crowdstrike.svg",
     "logo_dark": "logo_crowdstrike_dark.svg",
     "configuration": {
@@ -192,8 +192,8 @@
         },
         {
             "action": "list processes",
-            "description": "List processes that have recently used the IOC on a particular device.",
-            "verbose": "Given a file hash or domain, the action will list all the processes that have either recently connected to the domain or interacted with the file that matches the supplied hash. Use the <b>list endpoints</b> actions to get the device id to run the action on",
+            "description": "List processes that have recently used the IOC on a particular device",
+            "verbose": "Given a file hash or domain, the action will list all the processes that have either recently connected to the domain or interacted with the file that matches the supplied hash. Use the <b>list endpoints</b> actions to get the device id to run the action on.",
             "type": "investigate",
             "identifier": "list_processes",
             "read_only": true,
@@ -987,7 +987,7 @@
         {
             "action": "list alerts",
             "description": "Get a list of uploaded IOCs that match the search criteria",
-            "verbose": "The list of IOCs are segregated by the ioc type in the action results. The action view will limit the display of each IOC type to 100, however the result will contian the complete list returned by the device.<br>Valid and default values for parameters are:<ul><li>type<ul><li>all<br>Search in all IOC types. This is the default</li><li>hash<br>Search for match of type sha256, sha1 and md5</li><li>ipv4</li><li>sha256</li><li>sha1</li><li>md5</li><li>domain</li></ul></li><li>policy<br>Please see the documentation of the <b>create alert</b> action for an explaination of the policy values<ul><li>all<br>This is the default</li><li>detect</li><li>none<br>This is a valid string value for the policy parameter</li></ul></li><li>share_level<ul><li>all<br>This is the default</li><li>red</li></ul></li></ul><br>Every alert has an expiration time set (configured date and time when the alert will expire), use the <b>from_expiration</b> and <b>to_expiration</b> fields to return the alerts whose expiration time and date falls within the specified range. For e.g. to list all the alerts that expire between 1st August 2016 to 1st September 2016 use the from and to expiration dates as 2016-08-01T00:00:00Z and 2016-09-01T00:00:00Z respectively",
+            "verbose": "The list of IOCs are segregated by the ioc type in the action results. The action view will limit the display of each IOC type to 100, however the result will contian the complete list returned by the device.<br>Valid and default values for parameters are:<ul><li>type<ul><li>all<br>Search in all IOC types. This is the default</li><li>hash<br>Search for match of type sha256, sha1 and md5</li><li>ipv4</li><li>sha256</li><li>sha1</li><li>md5</li><li>domain</li></ul></li><li>policy<br>Please see the documentation of the <b>create alert</b> action for an explaination of the policy values<ul><li>all<br>This is the default</li><li>detect</li><li>none<br>This is a valid string value for the policy parameter</li></ul></li><li>share_level<ul><li>all<br>This is the default</li><li>red</li></ul></li></ul><br>Every alert has an expiration time set (configured date and time when the alert will expire), use the <b>from_expiration</b> and <b>to_expiration</b> fields to return the alerts whose expiration time and date falls within the specified range. For e.g. to list all the alerts that expire between 1st August 2016 to 1st September 2016 use the from and to expiration dates as 2016-08-01T00:00:00Z and 2016-09-01T00:00:00Z respectively.",
             "type": "investigate",
             "identifier": "search_iocs",
             "read_only": true,
@@ -1193,7 +1193,7 @@
         {
             "action": "list endpoints",
             "description": "List all the endpoints/sensors configured on the device",
-            "verbose": "<b>Filtering:</b><br>The Filter parameter allows you to search for specific devices in your environment by platform, host name, IP, or a number of other parameters. The filter must be made in the format FIELD: \u2019VALUE\u2019.  The value for the field must be a string enclosed by single quotes:<br><code>platform_name:'Windows'</code><br><br>Some numerical fields support filtering with operators. Supported operators include: >, <, =, >=, <=, and != . Using filter operators, it is possible to conduct searches like; show me all devices that have been active in the 7 days before July 31 2016:<br><code>last_seen:>'2016-07-24'</code><br><br>Wildcards are also supported for host name search. For example, you could do a partial search for a device called \"my-host-name\" like so:<br><code>hostname:'my-host-na*'</code><br><br>You can also use multiple filter statements, the filters are applied sequentially, each search is executed and then the subsequent search is done over the filtered results. <br>There are two logical operators, a plus sign (+) is used for AND, and comma separated statements in brackets ([,]) are used for OR.   Using logical operators, it is possible to conduct searches like; show me all devices that have been active in the 7 days before July 31 2016 AND devices where the platform is Windows OR Mac:<br><code>last_seen:>'2016-07-24'+platform_name:['Windows','Mac']</code>",
+            "verbose": "<b>Filtering:</b><br>The Filter parameter allows you to search for specific devices in your environment by platform, host name, IP, or a number of other parameters. The filter must be made in the format FIELD: \u2019VALUE\u2019.  The value for the field must be a string enclosed by single quotes:<br><code>platform_name:'Windows'</code><br><br>Some numerical fields support filtering with operators. Supported operators include: >, <, =, >=, <=, and != . Using filter operators, it is possible to conduct searches like; show me all devices that have been active in the 7 days before July 31 2016:<br><code>last_seen:>'2016-07-24'</code><br><br>Wildcards are also supported for host name search. For example, you could do a partial search for a device called \"my-host-name\" like so:<br><code>hostname:'my-host-na*'</code><br><br>You can also use multiple filter statements, the filters are applied sequentially, each search is executed and then the subsequent search is done over the filtered results. <br>There are two logical operators, a plus sign (+) is used for AND, and comma separated statements in brackets ([,]) are used for OR.   Using logical operators, it is possible to conduct searches like; show me all devices that have been active in the 7 days before July 31 2016 AND devices where the platform is Windows OR Mac:<br><code>last_seen:>'2016-07-24'+platform_name:['Windows','Mac']</code>.",
             "type": "investigate",
             "identifier": "list_endpoints",
             "read_only": true,
@@ -1401,7 +1401,7 @@
         {
             "action": "set status",
             "description": "Set the state of a detection in Falcon Host",
-            "verbose": "The detection <b>id</b> can be obtained from the Crowdstrike UI.<br>Valid values for the <b>state</b> parameter are <i>new</i>, <i>in_progress</i>, <i>true_positive</i>, <i>false_positive</i> and <i>ignored</i>",
+            "verbose": "The detection <b>id</b> can be obtained from the Crowdstrike UI.<br>Valid values for the <b>state</b> parameter are <i>new</i>, <i>in_progress</i>, <i>true_positive</i>, <i>false_positive</i> and <i>ignored</i>.",
             "type": "generic",
             "identifier": "resolve_detection",
             "read_only": false,
