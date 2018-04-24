@@ -85,15 +85,15 @@ class FalconHostAPI(BaseConnector):
         resp_json = None
 
         # get or post or put, whatever the caller asked us to use, if not specified the default will be 'get'
-        request_func = getattr(requests, method.lower())
-
-        # handle the error in case the caller specified a non-existant method
-        if (not request_func):
+        try:
+            request_func = getattr(requests, method.lower())
+        except AttributeError:
             return (action_result.set_status(phantom.APP_ERROR, FALCONAPI_ERR_API_UNSUPPORTED_METHOD, method=method), None)
 
         # Make the call
         try:
-            r = request_func(self._base_url + endpoint,  # The complete url is made up of the base_url, the api url and the endpiont
+            r = request_func(  # pylint: disable=E1102
+                    self._base_url + endpoint,  # The complete url is made up of the base_url, the api url and the endpiont
                     auth=self._auth,  # The authentication method, currently set to simple base authentication
                     data=json.dumps(data) if data else None,  # the data, converted to json string format if present, else just set to None
                     headers=headers,  # The headers to send in the HTTP call
@@ -252,6 +252,12 @@ class FalconHostAPI(BaseConnector):
         data = dict(response["resources"][0])
         action_result.add_data(data)
 
+        summary = action_result.update_summary({})
+        try:
+            summary['hostname'] = response["resources"][0]['hostname']
+        except:
+            pass
+
         return action_result.set_status(phantom.APP_SUCCESS)
 
     def _action_upload_iocs(self, param):
@@ -312,7 +318,7 @@ class FalconHostAPI(BaseConnector):
 
         action_result.add_data(data)
 
-        return action_result.set_status(phantom.APP_SUCCESS, FALCONAPI_SUCC_GENERAL)
+        return action_result.set_status(phantom.APP_SUCCESS, FALCONAPI_SUCC_GET_ALERT)
 
     def _action_update_iocs(self, param):
 
@@ -345,7 +351,7 @@ class FalconHostAPI(BaseConnector):
         if (phantom.is_fail(ret_val)):
             return action_result.get_status()
 
-        return action_result.set_status(phantom.APP_SUCCESS, FALCONAPI_SUCC_GENERAL)
+        return action_result.set_status(phantom.APP_SUCCESS, FALCONAPI_SUCC_UPDATE_ALERT)
 
     def _action_delete_iocs(self, param):
 
@@ -365,7 +371,7 @@ class FalconHostAPI(BaseConnector):
         if (phantom.is_fail(ret_val)):
             return action_result.get_status()
 
-        return action_result.set_status(phantom.APP_SUCCESS, FALCONAPI_SUCC_GENERAL)
+        return action_result.set_status(phantom.APP_SUCCESS, FALCONAPI_SUCC_DELETE_ALERT)
 
     def _action_search_iocs(self, param):
 
@@ -468,7 +474,7 @@ class FalconHostAPI(BaseConnector):
         if (phantom.is_fail(ret_val)):
             return action_result.get_status()
 
-        return action_result.set_status(phantom.APP_SUCCESS, FALCONAPI_SUCC_GENERAL)
+        return action_result.set_status(phantom.APP_SUCCESS, FALCONAPI_SUCC_SET_STATUS)
 
     def _action_list_processes(self, param):
 
@@ -598,7 +604,10 @@ class FalconHostAPI(BaseConnector):
         # if params are modified, we won't get a compilation error, but a runtime error
         # The safest way to _not_ run into that situation is to use a not so subtle if...else
 
-        return getattr(self, "_action_" + self.get_action_identifier(), phantom.APP_SUCCESS)(param)
+        action = str("_action_" + self.get_action_identifier())
+
+        return getattr(self, action, phantom.APP_SUCCESS)(param)
+
 
 if __name__ == '__main__':
 

@@ -89,21 +89,12 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.message",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.device_id",
-                    "data_type": "string",
-                    "contains": [
-                        "falcon device id"
-                    ],
-                    "column_order": 0,
-                    "column_name": "Falcon Device ID"
-                },
-                {
                     "data_path": "action_result.status",
                     "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.parameter.count_only",
+                    "data_type": "boolean"
                 },
                 {
                     "data_path": "action_result.parameter.hash",
@@ -116,12 +107,21 @@
                     ]
                 },
                 {
-                    "data_path": "action_result.parameter.count_only",
-                    "data_type": "boolean"
+                    "data_path": "action_result.data.*.device_id",
+                    "data_type": "string",
+                    "contains": [
+                        "falcon device id"
+                    ],
+                    "column_order": 0,
+                    "column_name": "Falcon Device ID"
                 },
                 {
                     "data_path": "action_result.summary.device_count",
                     "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
                 }
             ]
         },
@@ -157,8 +157,19 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.message",
+                    "data_path": "action_result.status",
                     "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.parameter.count_only",
+                    "data_type": "boolean"
+                },
+                {
+                    "data_path": "action_result.parameter.domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ]
                 },
                 {
                     "data_path": "action_result.data.*.device_id",
@@ -170,23 +181,12 @@
                     "column_name": "Falcon Device ID"
                 },
                 {
-                    "data_path": "action_result.status",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.parameter.domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ]
-                },
-                {
-                    "data_path": "action_result.parameter.count_only",
-                    "data_type": "boolean"
-                },
-                {
                     "data_path": "action_result.summary.device_count",
                     "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
                 }
             ]
         },
@@ -229,27 +229,19 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.summary",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.message",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.falcon_process_id",
-                    "data_type": "string",
-                    "contains": [
-                        "falcon process id"
-                    ],
-                    "column_order": 3,
-                    "column_name": "Falcon Process ID"
-                },
-                {
                     "data_path": "action_result.status",
                     "data_type": "string",
                     "column_order": 2,
                     "column_name": "Status"
+                },
+                {
+                    "data_path": "action_result.parameter.id",
+                    "data_type": "string",
+                    "column_order": 0,
+                    "column_name": "Falcon Device ID",
+                    "contains": [
+                        "falcon device id"
+                    ]
                 },
                 {
                     "data_path": "action_result.parameter.ioc",
@@ -265,13 +257,21 @@
                     ]
                 },
                 {
-                    "data_path": "action_result.parameter.id",
+                    "data_path": "action_result.data.*.falcon_process_id",
                     "data_type": "string",
-                    "column_order": 0,
-                    "column_name": "Falcon Device ID",
                     "contains": [
-                        "falcon device id"
-                    ]
+                        "falcon process id"
+                    ],
+                    "column_order": 3,
+                    "column_name": "Falcon Process ID"
+                },
+                {
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
                 }
             ]
         },
@@ -302,12 +302,19 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.summary",
-                    "data_type": "string"
+                    "data_path": "action_result.status",
+                    "data_type": "string",
+                    "column_order": 1,
+                    "column_name": "Status"
                 },
                 {
-                    "data_path": "action_result.message",
-                    "data_type": "string"
+                    "data_path": "action_result.parameter.falcon_process_id",
+                    "data_type": "string",
+                    "column_order": 0,
+                    "column_name": "Falcon Process ID",
+                    "contains": [
+                        "falcon process id"
+                    ]
                 },
                 {
                     "data_path": "action_result.data.*.command_line",
@@ -316,12 +323,35 @@
                     "column_name": "Command Line"
                 },
                 {
+                    "data_path": "action_result.data.*.device_id",
+                    "data_type": "string",
+                    "column_order": 6,
+                    "column_name": "Falcon Device ID",
+                    "contains": [
+                        "falcon device id"
+                    ]
+                },
+                {
                     "data_path": "action_result.data.*.file_name",
                     "data_type": "string",
                     "column_order": 3,
                     "column_name": "File Name",
                     "contains": [
                         "file name"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.process_id",
+                    "data_type": "string",
+                    "contains": [
+                        "pid"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.process_id_local",
+                    "data_type": "string",
+                    "contains": [
+                        "pid"
                     ]
                 },
                 {
@@ -347,42 +377,12 @@
                     "column_name": "Stop TimestampRaw"
                 },
                 {
-                    "data_path": "action_result.status",
-                    "data_type": "string",
-                    "column_order": 1,
-                    "column_name": "Status"
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.parameter.falcon_process_id",
-                    "data_type": "string",
-                    "column_order": 0,
-                    "column_name": "Falcon Process ID",
-                    "contains": [
-                        "falcon process id"
-                    ]
-                },
-                {
-                    "data_path": "action_result.data.*.process_id",
-                    "data_type": "string",
-                    "contains": [
-                        "pid"
-                    ]
-                },
-                {
-                    "data_path": "action_result.data.*.process_id_local",
-                    "data_type": "string",
-                    "contains": [
-                        "pid"
-                    ]
-                },
-                {
-                    "data_path": "action_result.data.*.device_id",
-                    "data_type": "string",
-                    "column_order": 6,
-                    "column_name": "Falcon Device ID",
-                    "contains": [
-                        "falcon device id"
-                    ]
+                    "data_path": "action_result.message",
+                    "data_type": "string"
                 }
             ]
         },
@@ -412,21 +412,87 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.data.*.cid",
-                    "data_type": "string"
+                    "data_path": "action_result.status",
+                    "data_type": "string",
+                    "example_values": [
+                        "success"
+                    ]
                 },
                 {
-                    "data_path": "action_result.data.*.status",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.hostname",
+                    "data_path": "action_result.parameter.id",
                     "data_type": "string",
                     "contains": [
-                        "host name"
+                        "falcon device id"
                     ],
-                    "column_name": "Hostname",
-                    "column_order": 1
+                    "example_values": [
+                        "0498d1102b23481162ff846d0633e14c"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.agent_load_flags",
+                    "data_type": "string",
+                    "example_values": [
+                        "3"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.agent_local_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2015-07-31T14:07:42.816Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.agent_version",
+                    "data_type": "string",
+                    "example_values": [
+                        "2.0.0010.3005"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.bios_manufacturer",
+                    "data_type": "string",
+                    "example_values": [
+                        "Phoenix Technologies LTD"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.bios_version",
+                    "data_type": "string",
+                    "example_values": [
+                        "6.00"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.cid",
+                    "data_type": "string",
+                    "example_values": [
+                        "3f40c380adc74a3187c27252c0227cff"
+                    ],
+                    "contains": [
+                        "md5"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.config_id_base",
+                    "data_type": "string",
+                    "example_values": [
+                        "65994752"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.config_id_build",
+                    "data_type": "string",
+                    "example_values": [
+                        "3005"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.config_id_platform",
+                    "data_type": "string",
+                    "example_values": [
+                        "3"
+                    ]
                 },
                 {
                     "data_path": "action_result.data.*.device_id",
@@ -435,142 +501,362 @@
                         "falcon device id"
                     ],
                     "column_name": "Falcon Device ID",
-                    "column_order": 0
+                    "column_order": 0,
+                    "example_values": [
+                        "0498d1102b23481162ff846d0633e14c"
+                    ]
                 },
                 {
-                    "data_path": "action_result.data.*.last_seen",
-                    "data_type": "string",
-                    "column_name": "Last Seen",
-                    "column_order": 2
+                    "data_path": "action_result.data.*.device_policies.prevention.applied",
+                    "data_type": "boolean",
+                    "example_values": [
+                        true
+                    ]
                 },
                 {
-                    "data_path": "action_result.data.*.os_version",
+                    "data_path": "action_result.data.*.device_policies.prevention.applied_date",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.prevention.assigned_date",
                     "data_type": "string",
-                    "column_name": "OS Version",
-                    "column_order": 3
+                    "example_values": [
+                        "2018-03-10T15:39:31.220730539Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.prevention.policy_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "f81459e0d85b4bc7b3ad14ad40889042"
+                    ],
+                    "contains": [
+                        "md5"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.prevention.policy_type",
+                    "data_type": "string",
+                    "example_values": [
+                        "prevention"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.prevention.settings_hash",
+                    "data_type": "string",
+                    "example_values": [
+                        "87cb8b2e"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.sensor_update.applied",
+                    "data_type": "boolean",
+                    "example_values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.sensor_update.applied_date",
+                    "data_type": "string",
+                    "example_values": []
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.sensor_update.assigned_date",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-03-10T15:39:31.220769757Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.sensor_update.policy_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "62a3908297584c52bdafaa7fdf3c3bdd"
+                    ],
+                    "contains": [
+                        "md5"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.sensor_update.policy_type",
+                    "data_type": "string",
+                    "example_values": [
+                        "sensor-update"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.sensor_update.settings_hash",
+                    "data_type": "string",
+                    "example_values": [
+                        "65994753|3|2|automatic"
+                    ]
                 },
                 {
                     "data_path": "action_result.data.*.external_ip",
                     "data_type": "string",
                     "contains": [
                         "ip"
+                    ],
+                    "example_values": [
+                        "50.18.218.205"
                     ]
                 },
                 {
-                    "data_path": "action_result.data.*.platform_id",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.bios_version",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.agent_version",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.major_version",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.minor_version",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.platform_name",
+                    "data_path": "action_result.data.*.first_seen",
                     "data_type": "string",
-                    "column_name": "Platform",
-                    "column_order": 4
+                    "example_values": [
+                        "2018-03-10T15:38:09Z"
+                    ]
                 },
                 {
-                    "data_path": "action_result.data.*.config_id_base",
-                    "data_type": "string"
+                    "data_path": "action_result.data.*.group_hash",
+                    "data_type": "string",
+                    "example_values": [
+                        "e2a8b394c0e62960747ff5d64a335162b36ba4c5a54ee6499b438b94e5269ae8"
+                    ],
+                    "contains": [
+                        "sha256"
+                    ]
                 },
                 {
-                    "data_path": "action_result.data.*.config_id_build",
-                    "data_type": "string"
+                    "data_path": "action_result.data.*.groups",
+                    "data_type": "string",
+                    "example_values": [
+                        "873560309d1b4686a6cee666575e7a93"
+                    ],
+                    "contains": [
+                        "md5"
+                    ]
                 },
                 {
-                    "data_path": "action_result.data.*.agent_load_flags",
-                    "data_type": "string"
+                    "data_path": "action_result.data.*.hostname",
+                    "data_type": "string",
+                    "contains": [
+                        "host name"
+                    ],
+                    "column_name": "Hostname",
+                    "column_order": 1,
+                    "example_values": [
+                        "TheNarrowSea",
+                        "CentOS70"
+                    ]
                 },
                 {
-                    "data_path": "action_result.data.*.agent_local_time",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.bios_manufacturer",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.config_id_platform",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.modified_timestamp",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.system_manufacturer",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.system_product_name",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.ou",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.site_name",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.product_type",
-                    "data_type": "string"
+                    "data_path": "action_result.data.*.last_seen",
+                    "data_type": "string",
+                    "column_name": "Last Seen",
+                    "column_order": 2,
+                    "example_values": [
+                        "2018-03-10T15:39:34Z"
+                    ]
                 },
                 {
                     "data_path": "action_result.data.*.machine_domain",
                     "data_type": "string",
                     "contains": [
                         "domain"
+                    ],
+                    "example_values": [
+                        "VICTIMNET.local"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.major_version",
+                    "data_type": "string",
+                    "example_values": [
+                        "6"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.meta.version",
+                    "data_type": "string",
+                    "example_values": [
+                        "6",
+                        "106635"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.minor_version",
+                    "data_type": "string",
+                    "example_values": [
+                        "1"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.modified_timestamp",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-03-10T15:40:09Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.os_version",
+                    "data_type": "string",
+                    "column_name": "OS Version",
+                    "column_order": 3,
+                    "example_values": [
+                        "Windows Server 2008 R2",
+                        "CentOS 7"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.ou",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.platform_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "0",
+                        "3"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.platform_name",
+                    "data_type": "string",
+                    "column_name": "Platform",
+                    "column_order": 4,
+                    "example_values": [
+                        "Windows"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.policies.*.applied",
+                    "data_type": "boolean",
+                    "example_values": [
+                        true
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.policies.*.applied_date",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.policies.*.assigned_date",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-03-10T15:39:31.220730539Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.policies.*.policy_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "f81459e0d85b4bc7b3ad14ad40889042"
+                    ],
+                    "contains": [
+                        "md5"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.policies.*.policy_type",
+                    "data_type": "string",
+                    "example_values": [
+                        "prevention"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.policies.*.settings_hash",
+                    "data_type": "string",
+                    "example_values": [
+                        "87cb8b2e"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.product_type",
+                    "data_type": "string",
+                    "example_values": [
+                        "3"
                     ]
                 },
                 {
                     "data_path": "action_result.data.*.product_type_desc",
-                    "data_type": "string"
+                    "data_type": "string",
+                    "example_values": [
+                        "Server"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.provision_status",
+                    "data_type": "string",
+                    "example_values": [
+                        "Provisioned"
+                    ]
                 },
                 {
                     "data_path": "action_result.data.*.release_group",
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.status",
-                    "data_type": "string"
+                    "data_path": "action_result.data.*.site_name",
+                    "data_type": "string",
+                    "example_values": [
+                        "Default-First-Site-Name"
+                    ]
                 },
                 {
-                    "data_path": "action_result.message",
-                    "data_type": "string"
+                    "data_path": "action_result.data.*.slow_changing_modified_timestamp",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-04-23T22:52:27Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.status",
+                    "data_type": "string",
+                    "example_values": [
+                        "normal"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.system_manufacturer",
+                    "data_type": "string",
+                    "example_values": [
+                        "VMware, Inc."
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.system_product_name",
+                    "data_type": "string",
+                    "example_values": [
+                        "VMware Virtual Platform"
+                    ]
                 },
                 {
                     "data_path": "action_result.summary.device_count",
                     "data_type": "numeric"
                 },
                 {
-                    "data_path": "action_result.parameter.id",
+                    "data_path": "action_result.summary.hostname",
                     "data_type": "string",
+                    "example_values": [
+                        "TheNarrowSea"
+                    ],
                     "contains": [
-                        "falcon device id"
+                        "host name"
+                    ]
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string",
+                    "example_values": [
+                        "Hostname: TheNarrowSea"
                     ]
                 },
                 {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 }
             ]
         },
@@ -639,20 +925,16 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.data",
-                    "data_type": "string"
-                },
-                {
                     "data_path": "action_result.status",
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.message",
+                    "data_path": "action_result.parameter.description",
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.summary",
-                    "data_type": "string"
+                    "data_path": "action_result.parameter.expiration",
+                    "data_type": "numeric"
                 },
                 {
                     "data_path": "action_result.parameter.ioc",
@@ -671,19 +953,23 @@
                     "data_type": "string"
                 },
                 {
+                    "data_path": "action_result.parameter.share_level",
+                    "data_type": "string"
+                },
+                {
                     "data_path": "action_result.parameter.source",
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.parameter.expiration",
-                    "data_type": "numeric"
-                },
-                {
-                    "data_path": "action_result.parameter.description",
+                    "data_path": "action_result.data",
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.parameter.share_level",
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.message",
                     "data_type": "string"
                 },
                 {
@@ -725,59 +1011,7 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.data.*.type",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.value",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.policy",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.source",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.created_by",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.description",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.modified_by",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.share_level",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.created_timestamp",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.modified_timestamp",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.expiration_timestamp",
-                    "data_type": "string"
-                },
-                {
                     "data_path": "action_result.status",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.message",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.summary",
                     "data_type": "string"
                 },
                 {
@@ -790,6 +1024,58 @@
                         "sha256",
                         "domain"
                     ]
+                },
+                {
+                    "data_path": "action_result.data.*.created_by",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.created_timestamp",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.description",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.expiration_timestamp",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.modified_by",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.modified_timestamp",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.policy",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.share_level",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.source",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.type",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.value",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
                 },
                 {
                     "data_path": "summary.total_objects",
@@ -867,16 +1153,12 @@
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.data",
+                    "data_path": "action_result.parameter.description",
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.summary",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.message",
-                    "data_type": "string"
+                    "data_path": "action_result.parameter.expiration",
+                    "data_type": "numeric"
                 },
                 {
                     "data_path": "action_result.parameter.ioc",
@@ -894,19 +1176,23 @@
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.parameter.expiration",
-                    "data_type": "numeric"
+                    "data_path": "action_result.parameter.share_level",
+                    "data_type": "string"
                 },
                 {
                     "data_path": "action_result.parameter.source",
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.parameter.description",
+                    "data_path": "action_result.data",
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.parameter.share_level",
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.message",
                     "data_type": "string"
                 },
                 {
@@ -948,19 +1234,7 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.data",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.summary",
-                    "data_type": "string"
-                },
-                {
                     "data_path": "action_result.status",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.message",
                     "data_type": "string"
                 },
                 {
@@ -973,6 +1247,18 @@
                         "sha256",
                         "domain"
                     ]
+                },
+                {
+                    "data_path": "action_result.data",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
                 },
                 {
                     "data_path": "summary.total_objects",
@@ -1067,57 +1353,11 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.id",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.md5",
-                    "data_type": "string",
-                    "contains": [
-                        "hash",
-                        "md5"
-                    ]
-                },
-                {
-                    "data_path": "action_result.data.*.ip",
-                    "data_type": "string",
-                    "contains": [
-                        "ip"
-                    ]
-                },
-                {
-                    "data_path": "action_result.data.*.sha1",
-                    "data_type": "string",
-                    "contains": [
-                        "hash",
-                        "sha1"
-                    ]
-                },
-                {
-                    "data_path": "action_result.data.*.domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ]
-                },
-                {
-                    "data_path": "action_result.data.*.sha256",
-                    "data_type": "string",
-                    "contains": [
-                        "hash",
-                        "sha256"
-                    ]
-                },
-                {
                     "data_path": "action_result.status",
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.message",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.parameter.type",
+                    "data_path": "action_result.parameter.from_expiration",
                     "data_type": "string"
                 },
                 {
@@ -1149,12 +1389,58 @@
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.parameter.from_expiration",
+                    "data_path": "action_result.parameter.to_expiration",
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.parameter.to_expiration",
+                    "data_path": "action_result.parameter.type",
                     "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.ip",
+                    "data_type": "string",
+                    "contains": [
+                        "ip"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.md5",
+                    "data_type": "string",
+                    "contains": [
+                        "hash",
+                        "md5"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.sha1",
+                    "data_type": "string",
+                    "contains": [
+                        "hash",
+                        "sha1"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.sha256",
+                    "data_type": "string",
+                    "contains": [
+                        "hash",
+                        "sha256"
+                    ]
+                },
+                {
+                    "data_path": "action_result.summary.alerts_found",
+                    "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.summary.total_domain",
+                    "data_type": "numeric"
                 },
                 {
                     "data_path": "action_result.summary.total_ip",
@@ -1169,16 +1455,12 @@
                     "data_type": "numeric"
                 },
                 {
-                    "data_path": "action_result.summary.alerts_found",
-                    "data_type": "numeric"
-                },
-                {
-                    "data_path": "action_result.summary.total_domain",
-                    "data_type": "numeric"
-                },
-                {
                     "data_path": "action_result.summary.total_sha256",
                     "data_type": "numeric"
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string"
                 },
                 {
                     "data_path": "summary.total_objects",
@@ -1230,150 +1512,15 @@
             },
             "output": [
                 {
-                    "data_path": "action_result.data.*.cid",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.status",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.hostname",
-                    "data_type": "string",
-                    "contains": [
-                        "host name"
-                    ],
-                    "column_name": "Hostname",
-                    "column_order": 1
-                },
-                {
-                    "data_path": "action_result.data.*.device_id",
-                    "data_type": "string",
-                    "contains": [
-                        "falcon device id"
-                    ],
-                    "column_name": "Falcon Device ID",
-                    "column_order": 0
-                },
-                {
-                    "data_path": "action_result.data.*.last_seen",
-                    "data_type": "string",
-                    "column_name": "Last Seen",
-                    "column_order": 2
-                },
-                {
-                    "data_path": "action_result.data.*.os_version",
-                    "data_type": "string",
-                    "column_name": "OS Version",
-                    "column_order": 3
-                },
-                {
-                    "data_path": "action_result.data.*.external_ip",
-                    "data_type": "string",
-                    "contains": [
-                        "ip"
-                    ]
-                },
-                {
-                    "data_path": "action_result.data.*.platform_id",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.bios_version",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.agent_version",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.major_version",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.minor_version",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.platform_name",
-                    "data_type": "string",
-                    "column_name": "Platform",
-                    "column_order": 4
-                },
-                {
-                    "data_path": "action_result.data.*.config_id_base",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.config_id_build",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.agent_load_flags",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.agent_local_time",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.bios_manufacturer",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.config_id_platform",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.modified_timestamp",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.system_manufacturer",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.system_product_name",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.ou",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.site_name",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.product_type",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.machine_domain",
-                    "data_type": "string",
-                    "contains": [
-                        "domain"
-                    ]
-                },
-                {
-                    "data_path": "action_result.data.*.product_type_desc",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.data.*.release_group",
-                    "data_type": "string"
-                },
-                {
                     "data_path": "action_result.status",
-                    "data_type": "string"
+                    "data_type": "string",
+                    "example_values": [
+                        "success"
+                    ]
                 },
                 {
-                    "data_path": "action_result.message",
+                    "data_path": "action_result.parameter.filter",
                     "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.summary.device_count",
-                    "data_type": "numeric"
                 },
                 {
                     "data_path": "action_result.parameter.limit",
@@ -1384,16 +1531,496 @@
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.parameter.filter",
+                    "data_path": "action_result.data.*.agent_load_flags",
+                    "data_type": "string",
+                    "example_values": [
+                        "0"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.agent_local_time",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-03-22T16:38:22.750Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.agent_version",
+                    "data_type": "string",
+                    "example_values": [
+                        "2.27.1804.0"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.bios_manufacturer",
+                    "data_type": "string",
+                    "example_values": [
+                        "Phoenix Technologies LTD"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.bios_version",
+                    "data_type": "string",
+                    "example_values": [
+                        "6.00"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.cid",
+                    "data_type": "string",
+                    "example_values": [
+                        "3f40c380adc74a3187c27252c0227cff"
+                    ],
+                    "contains": [
+                        "md5"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.config_id_base",
+                    "data_type": "string",
+                    "example_values": [
+                        "65994753"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.config_id_build",
+                    "data_type": "string",
+                    "example_values": [
+                        "1804"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.config_id_platform",
+                    "data_type": "string",
+                    "example_values": [
+                        "8"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_id",
+                    "data_type": "string",
+                    "contains": [
+                        "falcon device id"
+                    ],
+                    "column_name": "Falcon Device ID",
+                    "column_order": 0,
+                    "example_values": [
+                        "bfb4ebc6bca04c97592e4f69003aee40"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.global_config.applied",
+                    "data_type": "boolean",
+                    "example_values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.global_config.applied_date",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-03-14T00:09:10.673728368Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.global_config.assigned_date",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-03-14T00:06:29.224753262Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.global_config.policy_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "d4dd68c990ee40bca1d5ed56b07cdde6"
+                    ],
+                    "contains": [
+                        "md5"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.global_config.policy_type",
+                    "data_type": "string",
+                    "example_values": [
+                        "globalconfig"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.global_config.settings_hash",
+                    "data_type": "string",
+                    "example_values": [
+                        "614387e8"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.prevention.applied",
+                    "data_type": "boolean",
+                    "example_values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.prevention.applied_date",
+                    "data_type": "string",
+                    "example_values": [
+                        "2017-07-27T09:37:31.945581204Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.prevention.assigned_date",
+                    "data_type": "string",
+                    "example_values": [
+                        "2017-07-27T09:35:32.555314541Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.prevention.policy_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "f81459e0d85b4bc7b3ad14ad40889042"
+                    ],
+                    "contains": [
+                        "md5"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.prevention.policy_type",
+                    "data_type": "string",
+                    "example_values": [
+                        "prevention"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.prevention.settings_hash",
+                    "data_type": "string",
+                    "example_values": [
+                        "87cb8b2e"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.sensor_update.applied",
+                    "data_type": "boolean",
+                    "example_values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.sensor_update.applied_date",
                     "data_type": "string"
                 },
                 {
+                    "data_path": "action_result.data.*.device_policies.sensor_update.assigned_date",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-04-23T22:07:05.888228775Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.sensor_update.policy_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "9d4fd29a70a34612b34157db8b5a5b6d"
+                    ],
+                    "contains": [
+                        "md5"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.sensor_update.policy_type",
+                    "data_type": "string",
+                    "example_values": [
+                        "sensor-update"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.device_policies.sensor_update.settings_hash",
+                    "data_type": "string",
+                    "example_values": [
+                        "65994753|8|2|automatic"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.external_ip",
+                    "data_type": "string",
+                    "contains": [
+                        "ip"
+                    ],
+                    "example_values": [
+                        "50.254.133.53"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.first_seen",
+                    "data_type": "string",
+                    "example_values": [
+                        "2017-03-28T10:49:06Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.group_hash",
+                    "data_type": "string",
+                    "example_values": [
+                        "e2a8b394c0e62960747ff5d64a335162b36ba4c5a54ee6499b438b94e5269ae8"
+                    ],
+                    "contains": [
+                        "sha256"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.groups",
+                    "data_type": "string",
+                    "example_values": [
+                        "873560309d1b4686a6cee666575e7a93"
+                    ],
+                    "contains": [
+                        "md5"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.hostname",
+                    "data_type": "string",
+                    "contains": [
+                        "host name"
+                    ],
+                    "column_name": "Hostname",
+                    "column_order": 1,
+                    "example_values": [
+                        "CentOS70"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.last_seen",
+                    "data_type": "string",
+                    "column_name": "Last Seen",
+                    "column_order": 2,
+                    "example_values": [
+                        "2018-04-23T22:07:06Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.local_ip",
+                    "data_type": "string",
+                    "example_values": [
+                        "10.2.18.225"
+                    ],
+                    "contains": [
+                        "ip"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.mac_address",
+                    "data_type": "string",
+                    "example_values": [
+                        "00-50-56-9e-34-e4"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.machine_domain",
+                    "data_type": "string",
+                    "contains": [
+                        "domain"
+                    ],
+                    "example_values": [
+                        "id1.eng.cyphort.com"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.major_version",
+                    "data_type": "string",
+                    "example_values": [
+                        "3"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.meta.version",
+                    "data_type": "string",
+                    "example_values": [
+                        "106621"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.minor_version",
+                    "data_type": "string",
+                    "example_values": [
+                        "10"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.modified_timestamp",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-04-23T22:08:19Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.os_version",
+                    "data_type": "string",
+                    "column_name": "OS Version",
+                    "column_order": 3,
+                    "example_values": [
+                        "CentOS 7"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.ou",
+                    "data_type": "string",
+                    "example_values": [
+                        "Domain Controllers"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.platform_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "3"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.platform_name",
+                    "data_type": "string",
+                    "column_name": "Platform",
+                    "column_order": 4,
+                    "example_values": [
+                        "Linux"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.policies.*.applied",
+                    "data_type": "boolean",
+                    "example_values": [
+                        true,
+                        false
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.policies.*.applied_date",
+                    "data_type": "string",
+                    "example_values": [
+                        "2017-07-27T09:37:31.945581204Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.policies.*.assigned_date",
+                    "data_type": "string",
+                    "example_values": [
+                        "2017-07-27T09:35:32.555314541Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.policies.*.policy_id",
+                    "data_type": "string",
+                    "example_values": [
+                        "f81459e0d85b4bc7b3ad14ad40889042"
+                    ],
+                    "contains": [
+                        "md5"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.policies.*.policy_type",
+                    "data_type": "string",
+                    "example_values": [
+                        "prevention"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.policies.*.settings_hash",
+                    "data_type": "string",
+                    "example_values": [
+                        "87cb8b2e"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.product_type",
+                    "data_type": "string",
+                    "example_values": [
+                        "1"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.product_type_desc",
+                    "data_type": "string",
+                    "example_values": [
+                        "Workstation"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.provision_status",
+                    "data_type": "string",
+                    "example_values": [
+                        "Provisioned"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.release_group",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.data.*.site_name",
+                    "data_type": "string",
+                    "example_values": [
+                        "Default-First-Site-Name"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.slow_changing_modified_timestamp",
+                    "data_type": "string",
+                    "example_values": [
+                        "2018-04-23T22:08:19Z"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.status",
+                    "data_type": "string",
+                    "example_values": [
+                        "normal"
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.system_manufacturer",
+                    "data_type": "string",
+                    "example_values": [
+                        "VMware, Inc."
+                    ]
+                },
+                {
+                    "data_path": "action_result.data.*.system_product_name",
+                    "data_type": "string",
+                    "example_values": [
+                        "VMware Virtual Platform"
+                    ]
+                },
+                {
+                    "data_path": "action_result.summary.device_count",
+                    "data_type": "numeric",
+                    "example_values": [
+                        100
+                    ]
+                },
+                {
+                    "data_path": "action_result.message",
+                    "data_type": "string",
+                    "example_values": [
+                        "Device count: 100"
+                    ]
+                },
+                {
                     "data_path": "summary.total_objects",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 },
                 {
                     "data_path": "summary.total_objects_successful",
-                    "data_type": "numeric"
+                    "data_type": "numeric",
+                    "example_values": [
+                        1
+                    ]
                 }
             ],
             "versions": "EQ(*)"
@@ -1442,14 +2069,6 @@
                     "data_type": "string"
                 },
                 {
-                    "data_path": "action_result.message",
-                    "data_type": "string"
-                },
-                {
-                    "data_path": "action_result.summary",
-                    "data_type": "string"
-                },
-                {
                     "data_path": "action_result.parameter.id",
                     "data_type": "string",
                     "contains": [
@@ -1462,6 +2081,14 @@
                 },
                 {
                     "data_path": "action_result.data",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.summary",
+                    "data_type": "string"
+                },
+                {
+                    "data_path": "action_result.message",
                     "data_type": "string"
                 },
                 {
