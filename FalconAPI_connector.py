@@ -253,7 +253,10 @@ class FalconHostAPI(BaseConnector):
         action_result.add_data(data)
 
         summary = action_result.update_summary({})
-        summary['hostname'] = response["resources"][0]['hostname']
+        try:
+            summary['hostname'] = response["resources"][0]['hostname']
+        except:
+            pass
 
         return action_result.set_status(phantom.APP_SUCCESS)
 
