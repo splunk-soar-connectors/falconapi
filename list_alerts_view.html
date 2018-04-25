@@ -135,7 +135,7 @@ a:hover {
   </div>
 
   {% if result.data.md5 %}
-  <div id="md5" class="tab-pane fade" role=tabpanel"> <!--- MD5 -->
+  <div id="md5" class="tab-pane fade" role="tabpanel"> <!--- MD5 -->
     <h4 class="ph-h4-style"> </h4>
     <table class="ph-table-horizontal">
       <tr><th>MD5</th></tr>
@@ -158,7 +158,7 @@ a:hover {
   {% endif %} <!-- if result.data.md5 -->
 
   {% if result.data.sha256 %}
-  <div id="sha256" class="tab-pane fade" role=tabpanel"> <!--- sha256 -->
+  <div id="sha256" class="tab-pane fade" role="tabpanel"> <!--- sha256 -->
     <h4 class="ph-h4-style"> </h4>
     <table class="ph-table-horizontal">
       <tr><th>SHA256</th></tr>
@@ -181,7 +181,7 @@ a:hover {
   {% endif %} <!-- if result.data.sha256 -->
 
   {% if result.data.sha1 %}
-  <div id="sha1" class="tab-pane fade" role=tabpanel"> <!--- sha1 -->
+  <div id="sha1" class="tab-pane fade" role="tabpanel"> <!--- sha1 -->
     <h4 class="ph-h4-style"> </h4>
     <table class="ph-table-horizontal">
       <tr><th>SHA1</th></tr>
@@ -204,7 +204,7 @@ a:hover {
   {% endif %} <!-- if result.data.sha1 -->
 
   {% if result.data.domain %}
-  <div id="domain" class="tab-pane fade" role=tabpanel"> <!--- domain -->
+  <div id="domain" class="tab-pane fade" role="tabpanel"> <!--- domain -->
     <h4 class="ph-h4-style"> </h4>
     <table class="ph-table-horizontal">
       <tr><th>DOMAIN</th></tr>
@@ -227,7 +227,7 @@ a:hover {
   {% endif %} <!-- if result.data.domain -->
   
   {% if result.data.ip %}
-  <div id="ip" class="tab-pane fade" role=tabpanel"> <!--- ip -->
+  <div id="ip" class="tab-pane fade" role="tabpanel"> <!--- ip -->
     <h4 class="ph-h4-style"> </h4>
     <table class="ph-table-horizontal">
       <tr><th>IP</th></tr>
@@ -252,6 +252,8 @@ a:hover {
 
 </div>
 
+{% else %}
+  <p> No alerts found </p>
 {% endif %}
 {% endfor %}
 {% endblock %}
