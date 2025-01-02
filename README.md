@@ -10,8 +10,8 @@ Minimum Product Version: 3.0.284
 
 This app allows you to manage indicators of compromise (IOC) and investigate your endpoints on the Falcon Host API
 
-### Configuration Variables
-The below configuration variables are required for this Connector to operate.  These variables are specified when configuring a Falcon Host API asset in SOAR.
+### Configuration variables
+This table lists the configuration variables required to operate Falcon Host API. These variables are specified when configuring a Falcon Host API asset in Splunk SOAR.
 
 VARIABLE | REQUIRED | TYPE | DESCRIPTION
 -------- | -------- | ---- | -----------
